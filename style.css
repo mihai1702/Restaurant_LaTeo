@@ -84,18 +84,21 @@ h1{
     margin: 0;
 }
 
-.home-page-section{
+.home-page-section, .contact-section{
     background-image: url('images/img_restaurant.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     margin: 0;
 }
-.home-page-content{
+.home-page-content, .contact-content{
     display: block;
     text-align: center;
     padding-top: 200px;
     background-color: rgba(55,38,22,0.5);
+    color: #fff;
+}
+.home-page-section h1{
     color: #fff;
 }
 .home-page-content .logo{
@@ -285,4 +288,36 @@ hr{
 }
 .credentials a:hover{
     color: #fff;
+}
+
+
+/* ------------------------------- */
+        /* Contact page */ 
+
+.contact-section{
+    display: block;
+}
+.contact-section p, a{
+    color: white;
+    text-decoration: none;
+}
+.contact-section .icon{
+    width: 50px;
+    height: 50px;
+}
+.contact-section hr{
+    background-color: #fff;
+}
+.contact-section-contact a{
+    display: block;
+    margin-bottom: 10px;
+}
+.social{
+    gap: 30px;
+}
+.social a{
+    margin-bottom: 40px;
+}
+.map{
+    padding-bottom: 60px;
 }
