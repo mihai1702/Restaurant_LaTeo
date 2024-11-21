@@ -1,0 +1,288 @@
+body{
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+
+
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #322524;
+    height: 70px;
+    color: #fff;
+    padding-left: 25px;
+    padding-right: 25px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2000;
+    
+}
+.logo{
+    height: 40px;
+    padding-top: 20px;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+}
+
+.drpdwn-btn {
+    width: 25px;
+    height: 25px;  
+    cursor: pointer;
+    padding-top: 25px;
+}
+
+.dropdown-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 70px;
+    right: 0px; 
+    width: 180px;
+    background-color: #322524;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 0px 5px;
+    padding: 10px;
+    z-index: 1000;
+    transition: max-height 0.7s ease-out, padding 0.7s ease-out;
+}
+
+.dropdown-content.show {
+    opacity: 1;
+    max-height: 300px;
+}
+
+.home-button, .about-us-button, .menu-button, .contact-button, .reservation-button { 
+    display: flex;
+    padding-bottom: 10px;
+    padding-right: 20px;
+}
+
+.dropdown-content div {
+    margin: 5px 0;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.dropdown-content a:hover {
+    color: #007BFF;
+}
+
+h1{
+    color: #fff;
+    margin: 0;
+}
+
+.home-page-section{
+    background-image: url('images/img_restaurant.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+.home-page-content{
+    display: block;
+    text-align: center;
+    padding-top: 200px;
+    background-color: rgba(55,38,22,0.5);
+    color: #fff;
+}
+.home-page-content .logo{
+    max-width: 270px;
+    height: 130px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.home-page-content p{
+    
+    font-size: 16px;
+}
+.home-page-p{
+    gap: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.see-menu, .phone{
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: #fff;
+    border: 2px solid #fff;
+    margin-top: 80px;
+    padding: 1rem 4rem;
+    position: relative;
+    background: linear-gradient(35deg, #fff 50%, rgba(49,49,49, 0.2) 50%);
+    background-size: 300%;
+    background-position: 100%;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 0.5s;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 150px;
+}
+
+.see-menu:hover, .phone:hover {
+    background-position: 0;
+    transition: 0.7s;
+    color: #000;
+    border: none;
+}
+.home-second-section{
+    font-family: 'MonteCarlo', sans-serif;
+    color: #322524;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 40px;
+    background-image: url(images/bg-second-section-home.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding-top: 70px;
+    min-height: 280px;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.4),
+                0 5px 10px rgba(0, 0, 0, 1);
+}
+.blur-effect{
+    backdrop-filter: blur(2px);
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+    border: 2px solid rgba(255,255,255, 0.18);
+}
+.home-second-section p{
+    margin: 0;
+}
+.swiper .swiper-slide{
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+}
+.swiper-section{
+    background-color:#88785fc7;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.reservations{
+    background-image: url(images/bg-second-section-home.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding-bottom: 30px;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.4),
+                0 5px 10px rgba(0, 0, 0, 1);
+               
+}
+.reservations a, h1, h2, p{
+    color: #322524;
+    text-align: center;
+    display: block;
+}
+.reservations h1{
+    font-family: 'MonteCarlo', sans-serif;
+    font-size: 50px;
+}
+.program{
+    display:flex; 
+    justify-content: space-evenly;
+}
+.days{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: -10px;
+}
+.phone{
+    max-width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.footer{
+    background-color:#88785fc7;
+    display: block;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.footer img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 100px;
+    padding-top: 30px;
+}
+.social{
+    display: flex;
+    justify-content: center;
+
+}
+.footer p{
+    color: #fff;
+}
+.social img{
+    margin: 0;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+}
+hr{
+    border: none;
+    height: 2px;
+    background-color: #322524; 
+    width: 50%;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.footer-contact{
+    text-decoration: none;
+    color: #fff;
+}
+.footer-contact:hover{
+    color: #007BFF;
+}
+.credentials{
+    display: flex;
+    position:relative;
+    bottom: 0;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-top: 40px;
+    margin-bottom: 0px;
+    gap: 5px;
+}
+.footer .icon{
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    margin-top: 2px;
+}
+.credentials a{
+    text-decoration: none;
+    color: rgb(227, 227, 227);
+}
+.credentials a:hover{
+    color: #fff;
+}
