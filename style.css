@@ -4,6 +4,10 @@ body{
 
 
 }
+html{
+    scroll-behavior: smooth;
+}
+
 .header{
     display: flex;
     justify-content: space-between;
@@ -42,7 +46,7 @@ body{
     position: absolute;
     top: 70px;
     right: 0px; 
-    width: 180px;
+    width: 230px;
     background-color: #322524;
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 0px 5px;
@@ -320,4 +324,49 @@ hr{
 }
 .map{
     padding-bottom: 60px;
+}
+.menu-section{
+    background-color:#88785fc7;
+}
+.menu-part{
+    margin-top: 70px;
+}
+.menu-title{
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+}
+.menu-part h2{
+    font-family: 'MonteCarlo', sans-serif;
+    font-size: 40px;
+    
+}
+.menu-title p{
+    margin-top: 30px;
+}
+.menu-part h2, p{
+    color:#322524;
+    margin:0;
+}
+.menu-comp{
+    width: 85%;
+    border: solid 2px #322524;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 15px;
+}
+.menu-comp h4, p{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.menu-comp div{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+span{
+    font-weight: bold;
 }
