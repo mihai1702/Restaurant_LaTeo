@@ -7,7 +7,22 @@ body{
 html{
     scroll-behavior: smooth;
 }
+#page-up{
+    position:fixed;
+    display: none;
+    bottom: 5px;
+    right: 5px;
+    background-color: #322524;
+    border-radius: 10px;
+    padding: 5px;
+    z-index: 3000;
+}
+#page-up img{
+    width: 60px;
+    height: 60px;
+}
 
+/* MOBILE STYLING */
 .header{
     display: flex;
     justify-content: space-between;
@@ -145,7 +160,6 @@ h1{
     background-position: 0;
     transition: 0.7s;
     color: #000;
-    border: none;
 }
 .home-second-section{
     font-family: 'MonteCarlo', sans-serif;
@@ -311,6 +325,7 @@ hr{
 }
 .contact-section hr{
     background-color: #fff;
+    margin-top: 10px;
 }
 .contact-section-contact a{
     display: block;
@@ -326,7 +341,8 @@ hr{
     padding-bottom: 60px;
 }
 .menu-section{
-    background-color:#88785fc7;
+    background-color:#CDC2A5;
+    padding-bottom: 15px;
 }
 .menu-part{
     margin-top: 70px;
@@ -356,7 +372,8 @@ hr{
     border-radius: 7px;
     padding-left: 15px;
     padding-right: 15px;
-    margin-bottom: 15px;
+    background-color: #e1d7c668;
+    margin-top: 15px;
 }
 .menu-comp h4, p{
     margin-top: 20px;
@@ -369,4 +386,112 @@ hr{
 }
 span{
     font-weight: bold;
+}
+
+
+/* END MOBILE STYLING */
+
+/* DESKTOP STYLING */
+@media (min-width: 1024px)
+{
+    .dropdown-button{
+        display: none;
+    }
+    .header{
+        padding-right: 0px;
+        height: 60px;
+    }
+    .logo{
+        padding-top: 9px;
+    }
+    .header .icon{
+        display: none;
+    }
+    .dropdown-content{
+        opacity: 1;
+        display: flex;
+        overflow: visible;
+        position: static;
+        width: fit-content;
+        box-shadow: none;
+        padding-right: 0px;
+        transition: none;
+    }
+    .dropdown-content a{    
+        font-size: 15px;
+        text-decoration: none;
+        letter-spacing: 1px;
+        color: #fff;
+        border: none;
+        padding-top: 5px;
+        padding-bottom: 24px;
+        padding-left: 7px;
+        padding-right: 7px;
+        position: relative;
+        background: linear-gradient(35deg, #fff 50%, #322524 50%);
+        background-size: 300%;
+        background-position: 100%;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: 0.5s;
+        font-weight: bold;
+    }
+    .dropdown-content a:hover{
+    background-position: 0;
+    transition: 0.7s;
+    color: #000;
+    }
+    .blur-effect{
+        width: 60%;
+        margin: auto;
+    }
+    .swiper .swiper-slide{
+        height: 550px;
+    }
+    .footer .desktop-style{
+        display: flex;
+        gap: 150px;
+        justify-content: center;
+    }
+    .footer hr{
+        width: 100%;
+    }
+    .credentials{
+        padding-top: 0;
+    }
+    .reservations .desktop-style{
+        display: flex;
+        gap: 150px;
+        justify-content: center;
+    }
+    .reservations .phone{
+        margin: 0;
+        height: 18px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .program{
+        gap: 40px;
+    }
+    .contact-section hr{
+        display: none;
+    }
+
+    .contact-content{
+        display: flex;
+        gap: 100px;
+        justify-content: center;
+        padding-bottom: 150px;
+    }
+    .map iframe{
+        height: 215px;
+    }
+    .product-list{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    } 
+    .menu-comp{
+        max-width: 600px;
+    }
+    
 }

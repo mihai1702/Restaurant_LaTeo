@@ -49,7 +49,7 @@
                 </div>
                 <div class="reservation-button">
                     <img class="icon" src="icons/reservation-icon.png" alt=".">
-                    <a href="#reserv">REZERVARI</a>
+                    <a id="scroll-button" href="#reserv">REZERVARI</a>
                 </div>
             </nav>
         </div>
@@ -61,7 +61,7 @@
        <div class="home-page-content">                
             <img class="logo" src="icons/logo.png" alt="Logo">
             <h1>Gustul care te aduce acasă!</h1>
-            <button class="see-menu">Vezi Meniul</button>
+            <button class="see-menu" onclick="location.href='meniu.html'">Vezi Meniul</button>
         </div>
     </section>
     <!-- Second section -->
@@ -74,7 +74,7 @@
         </div>
     </section>
     <!-- Image Slider Section -->
-    <section class="swiper-section" id="reserv">
+    <section class="swiper-section">
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" style="background-image: url(images/slider-main.jpg);"></div>
@@ -94,10 +94,12 @@
         
     </section>
     <!-- Reservation section -->
-     <section class="reservations">
+     <section class="reservations" id="reserv">
             <h1>Rezervari</h1>
-            <a class="phone" href="tel:+0787596450">SUNA ACUM</a>
-            <h2>ORAR</h2>
+            <div class="desktop-style">
+                <a class="phone" href="tel:+0265212244">SUNA ACUM</a>
+                <div>
+                    <h2>ORAR</h2>
             <div class="program">
                 <div>
                     <p class="days">Luni - Sambata</p>
@@ -108,24 +110,33 @@
                     <p>12:00 - 22:00</p>
                 </div>
             </div>
+                </div>
+            </div>
+            
      </section>
     <!-- Footer -->
     <section class="footer">
-        <img src="images/logo-main.png" alt="...">
-        <h3>Social media</h3>
-        <hr>
-        <div class="social">
-            <a target="_blank" href="https://www.facebook.com/LaTeoRestaurant/"><img src="icons/facebook-icon.svg" alt="."></a>
-            <a target="_blank" href="https://www.instagram.com/lateorestaurant/"><img src="icons/instagram-icon.svg" alt="."></a>
+        <div class="desktop-style">
+            <div>
+                <img src="images/logo-main.png" alt="...">
+                <h3>Social media</h3>
+                <hr>
+                <div class="social">
+                    <a target="_blank" href="https://www.facebook.com/LaTeoRestaurant/"><img src="icons/facebook-icon.svg" alt="."></a>
+                    <a target="_blank" href="https://www.instagram.com/lateorestaurant/"><img src="icons/instagram-icon.svg" alt="."></a>
+                </div>
+            </div>
+            <div>
+                <h3>Adresa</h3>
+            <hr>
+            <p>Alexandru Papiu Ilarian 1</p>
+            <p>Târgu Mureș</p>
+            <p>540074</p>
+            <h3>Contact</h3>
+            <hr>
+            <a class="footer-contact" href="tel:+0265 212 244">0265 212 244</a>
+            </div>
         </div>
-        <h3>Adresa</h3>
-        <hr>
-        <p>Alexandru Papiu Ilarian 1</p>
-        <p>Târgu Mureș</p>
-        <p>540074</p>
-        <h3>Contact</h3>
-        <hr>
-        <a class="footer-contact" href="tel:+0265 212 244">0265 212 244</a>
         <p class="credentials">2024 <img class="icon" src="icons/copyright-icon.png" alt="."> <a href="index.html">La Teo </a> | Designed by <a target="_blank" href="https://www.linkedin.com/in/mihai-apopi-998889208/" target="_blank">Mihai Apopi</a></p>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
