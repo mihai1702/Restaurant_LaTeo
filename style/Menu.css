@@ -1,0 +1,39 @@
+body{
+ background-color: rgb(205, 194, 165);
+ margin:0px;
+ margin-top: 80px;
+}
+.menu-comp{
+    background-color: #e1d7c668;
+    border: solid 2px #322524;
+    border-radius:5px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+    display: block;
+}
+.name-price{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+h4{
+    font-size: 18px;
+}
+.ingredients span, .quantity span{
+    font-weight: bold;
+}
+
+.menu-comp img{
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius:5px;
+    border: 2px solid #322524;
+}
+ 

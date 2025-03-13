@@ -1,0 +1,74 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #322524;
+    height: 70px;
+    color: #fff;
+    padding-left: 25px;
+    padding-right: 25px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2000;
+    
+}
+.logo{
+    height: 40px;
+    margin-top: 10px;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+}
+
+.drpdwn-btn {
+    width: 25px;
+    height: 25px;  
+    cursor: pointer;
+    /* padding-top: 25px; */
+}
+
+.dropdown-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 70px;
+    right: 0px; 
+    width: 230px;
+    background-color: #322524;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 0px 5px;
+    padding: 10px;
+    z-index: 1000;
+    transition: max-height 0.7s ease-out, padding 0.7s ease-out;
+}
+
+.dropdown-content.show {
+    opacity: 1;
+    max-height: 300px;
+}
+
+.home-button, .about-us-button, .menu-button, .contact-button, .reservation-button { 
+    display: flex;
+    padding-bottom: 10px;
+    padding-right: 20px;
+}
+
+.dropdown-content div {
+    margin: 5px 0;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.dropdown-content a:hover {
+    color: #007BFF;
+}
