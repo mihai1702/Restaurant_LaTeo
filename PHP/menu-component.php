@@ -1,7 +1,7 @@
 <div class="menu-comp">
     <div>
         <div>
-            <img src="<?php echo $row["ImageURL"]?>" alt=".">
+            <img src="../images/menu-images/<?php echo $row["ImageURL"]?>" alt=".">
         </div>
         <div class="name-price">
             <h4>

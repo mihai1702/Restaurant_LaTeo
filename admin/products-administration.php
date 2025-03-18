@@ -1,3 +1,7 @@
+<?php
+require "connection_db.php";
+require "product.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,22 +14,9 @@
 
 <body>
     <?php
-    include("leftside.php");
+    include "leftside.php";
     ?>
     <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "lateodb";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
-//echo "Connected successfully";
-
 $sql="SELECT * FROM menu";
 $result = mysqli_query($conn, $sql);
 ?>
@@ -34,36 +25,55 @@ $result = mysqli_query($conn, $sql);
             <h2>Product Management</h2>
             <a href="product-form.php">Add new Product</a>
         </div>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Product Name</th>
-                <th>Price</th>
-                <th>Ingredients</th>
-                <th>Quantity</th>
-                <th>IMG Path</th>
-                <th>Creation Date</th>
-                <th></th>
-            </tr>
-            <?php
+        <div class="products-table">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Ingredients</th>
+                    <th>Quantity</th>
+                    <th>IMG Path</th>
+                    <th>Creation Date</th>
+                    <th></th>
+                </tr>
+                <?php
         if(mysqli_num_rows  ($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {    
-            include("product-row.php");
+            include "product-row.php";
             ?>
-        <?php
-            // echo "<br>id: ". $row["ID"] ."<br>Name: ". $row["Name"]."<br>Price: ". $row["Price"] ."<br>Ingredients: ". $row["Ingredients"]." <br>Quantity: ". $row["Quantity"] ."<br>ImageURL: ". $row["ImageURL"]."<br>Creation Date: ". $row["CreationDate"];
+                <?php
             }
         }
         else{
             echo "0 results";
         }
-    ?>
-            <tr>
-            </tr>
-        </table>
+        ?>
+                <tr>
+                </tr>
+            </table>
+
+        </div>
+
+        <?php
+            if($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['method']) && $_GET['method']==='delete') {
+                $id=$_GET['product_id'];
+                $product = new Product();
+                $product->deleteProduct($conn, $id);
+        
+            }
+        ?>
+        <div id="deletePopUp" class="pop-up">
+            <div class="pop-up-content">
+                <p>Are you sure you want to delete this product?</p>
+                <button onclick="confirmDelete()" id="confirmButton">Confirm</button>
+                <button onclick="declineDelete()" id="declineButton">Decline</button>
+            </div>
+        </div>
 
         <div id="edit-form-container"></div>
     </div>
+    <script src="../admin/js/admin-script.js"></script>
 </body>
 
 </html>

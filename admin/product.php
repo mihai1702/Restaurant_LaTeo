@@ -10,27 +10,52 @@ class Product{
     public function __construct(){
         
     }
-
+    public function get_product($conn, $id){
+        $sql="SELECT * FROM menu WHERE ID=$id";
+        if($sql)
+        {
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                return $result->fetch_assoc();
+            }
+        }
+        return false;
+    }
     public function addProduct($conn){ 
-            $name = mysqli_real_escape_string($conn, $this->name);
-            $price = mysqli_real_escape_string($conn, $this->price);
-            $ingredients = mysqli_real_escape_string($conn, $this->ingredients);
-            $quantity = mysqli_real_escape_string($conn, $this->quantity);
-            $imageURL = mysqli_real_escape_string($conn, $this->imageURL);
-            $creationDate = mysqli_real_escape_string($conn, $this->creationDate);
-    
-            $price = floatval($price);
+            $price = floatval($this->price);
     
             $sql = "INSERT INTO menu (Name, Price, Ingredients, Quantity, ImageURL, CreationDate)
-                    VALUES ('$name', '$price', '$ingredients', '$quantity', '$imageURL', '$creationDate')";
-    
-            if (mysqli_query($conn, $sql)) {
-                header("Location: products-administration.php");
-                exit();
-    
-            } else {
-                echo "Eroare: " . mysqli_error($conn);
-            }
+                    VALUES ('$this->name', '$price', '$this->ingredients', '$this->quantity', '$this->imageURL', '$this->creationDate')";
+
+    $this->sqlExecute($conn, $sql);
+    }
+    public function deleteProduct($conn, $id){
+        $sql="DELETE FROM menu WHERE ID=$id";
+        if (mysqli_query($conn, $sql)) {
+            header("Location: products-administration.php");
+            exit();
+        } else {
+            echo "Eroare: " . mysqli_error($conn);
+        }
+    }
+
+
+    public function editProduct($conn, $id){
+        $price = floatval($this->price);
+
+        $sql = "UPDATE menu 
+        SET Name='$this->name', Price='$price', Ingredients='$this->ingredients', Quantity='$this->quantity', ImageURL='$this->imageURL', CreationDate='$this->creationDate' 
+        WHERE ID='$id'";
+        $this->sqlExecute($conn, $sql);
+    }
+
+    public function sqlExecute($conn, $sql){
+        if (mysqli_query($conn, $sql)) {
+            header("Location: products-administration.php");
+            exit();
+
+        } else {
+            echo "Eroare: " . mysqli_error($conn);
+        }
     }
 }
-?>
