@@ -29,17 +29,6 @@ class Product{
 
     $this->sqlExecute($conn, $sql);
     }
-    public function deleteProduct($conn, $id){
-        $sql="DELETE FROM menu WHERE ID=$id";
-        if (mysqli_query($conn, $sql)) {
-            header("Location: products-administration.php");
-            exit();
-        } else {
-            echo "Eroare: " . mysqli_error($conn);
-        }
-    }
-
-
     public function editProduct($conn, $id){
         $price = floatval($this->price);
 

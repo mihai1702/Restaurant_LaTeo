@@ -3,7 +3,7 @@
         <a href="products-administration.php">Products administration</a>
     </div>
     <div>
-        <a href="?content=2">Orders</a>
+        <a href="#">Orders</a>
     </div>
 
 </section>

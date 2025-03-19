@@ -1,41 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//     document.querySelectorAll(".edit-link").forEach(link => {
-//         link.addEventListener("click", function(event) {
-//             event.preventDefault(); // Oprește redirecționarea
-
-//             let productId = this.getAttribute("data-id");
-
-//             // AJAX Request către edit-form.php
-//             let xhr = new XMLHttpRequest();
-//             xhr.open("GET", "edit-form.php?id=" + productId, true);
-//             xhr.onreadystatechange = function() {
-//                 if (xhr.readyState == 4 && xhr.status == 200) {
-//                     document.getElementById("edit-form-container").innerHTML = xhr.responseText;
-//                 }
-//             };
-//             xhr.send();
-//         });
-//     });
-// });
-
-
-
-function deletePopUp(event, obj){
-    event.preventDefault();
-    deleteLink = obj;
-    let popup = document.getElementById("deletePopUp");
-    popup.style.display = "flex";
-}
-function confirmDelete()
-{
-    if(deleteLink)
-        window.location.href = deleteLink.href;
-}
-function declineDelete(){
-    let popup = document.getElementById("deletePopUp");
-    popup.style.display = "none";
-}
-
 
 document.addEventListener("DOMContentLoaded", function(){
     let nameInput=document.getElementById("name");
@@ -106,3 +68,37 @@ function validateForm(){
     });
     return isValid;
 }
+
+
+$(".deleteButton").click("click", function(e){
+    e.preventDefault();
+    let productId=$(this).data("id");
+    let popup = document.getElementById("deletePopUp");
+    popup.style.display = "flex";
+    $("#confirmButton").click(function(){
+        $.ajax({
+            type: "POST",
+            url:"deleteProduct.php",
+            data:{id: productId},
+            dataType: "json",
+            success: function(response){
+                console.log(response);
+                if(response.success == true){
+                    popup.style.display = "none";
+                    $("#product-" + productId).fadeOut();
+                }else {
+                    alert("Eroare: " + response.message);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log("AJAX Error Status:", status);
+                console.log("AJAX Error:", error);
+                console.log("AJAX Response Text:", xhr.responseText);
+                alert("A apărut o eroare la ștergere. Detalii în consolă.");
+            }
+        })
+    })
+    $("#declineButton").click(function () {
+        popup.style.display = "none";
+    });
+})

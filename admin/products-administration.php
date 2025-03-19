@@ -30,6 +30,7 @@ $result = mysqli_query($conn, $sql);
                 <tr>
                     <th>ID</th>
                     <th>Product Name</th>
+                    <th>Active</th>
                     <th>Price</th>
                     <th>Ingredients</th>
                     <th>Quantity</th>
@@ -41,8 +42,6 @@ $result = mysqli_query($conn, $sql);
         if(mysqli_num_rows  ($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {    
             include "product-row.php";
-            ?>
-                <?php
             }
         }
         else{
@@ -55,25 +54,17 @@ $result = mysqli_query($conn, $sql);
 
         </div>
 
-        <?php
-            if($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['method']) && $_GET['method']==='delete') {
-                $id=$_GET['product_id'];
-                $product = new Product();
-                $product->deleteProduct($conn, $id);
-        
-            }
-        ?>
         <div id="deletePopUp" class="pop-up">
             <div class="pop-up-content">
                 <p>Are you sure you want to delete this product?</p>
-                <button onclick="confirmDelete()" id="confirmButton">Confirm</button>
-                <button onclick="declineDelete()" id="declineButton">Decline</button>
+                <button id="confirmButton">Confirm</button>
+                <button id="declineButton">Decline</button>
             </div>
         </div>
 
         <div id="edit-form-container"></div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../admin/js/admin-script.js"></script>
 </body>
-
 </html>

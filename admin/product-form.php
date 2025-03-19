@@ -27,15 +27,15 @@ require("product.php");
                 $file=$_FILES["imageURL"];
                 $filename=basename($file["name"]);
                 $target_file=$directory.$filename;
-                $tmp_name=$product->imageURL;
+                $tmp_name=$_FILES['imageURL']['tmp_name'];
                 if(move_uploaded_file($tmp_name, $target_file)){
-                    echo"Fisierul a fost incarcat cu succes";
+                    die("Fisierul a fost incarcat cu succes");
                 }
                 else{
-                    echo "eroare la adaugarea fisierului ";
+                    die("eroare la adaugarea fisierului ");
                 }
             }
-          
+
         if(isset($_POST['ID']) && $_POST['ID']!='')
         {
             $product->editProduct($conn, $_POST['ID']);
@@ -45,9 +45,6 @@ require("product.php");
     }
     if($_SERVER['REQUEST_METHOD']=="GET" && isset($_GET['product_id'])){
         $prod_array=$product->get_product($conn, $_GET['product_id']);
-        
-
-
     }
     include("leftside.php");
     ?>
