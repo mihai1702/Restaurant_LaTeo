@@ -25,8 +25,8 @@ $result = mysqli_query($conn, $sql);
             <h2>Product Management</h2>
             <a href="product-form.php">Add new Product</a>
         </div>
-        <div class="products-table">
-            <table>
+        <div>
+            <table class="products-table">
                 <tr>
                     <th>ID</th>
                     <th>Product Name</th>
@@ -39,15 +39,15 @@ $result = mysqli_query($conn, $sql);
                     <th></th>
                 </tr>
                 <?php
-        if(mysqli_num_rows  ($result) > 0) {
-            while($row = mysqli_fetch_assoc($result)) {    
-            include "product-row.php";
+            if(mysqli_num_rows  ($result) > 0) {
+                while($row = mysqli_fetch_assoc($result)) {    
+                include "product-row.php";
             }
-        }
-        else{
-            echo "0 results";
-        }
-        ?>
+            }
+            else{
+                echo "0 results";
+            }
+                ?>
                 <tr>
                 </tr>
             </table>
@@ -67,4 +67,5 @@ $result = mysqli_query($conn, $sql);
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../admin/js/admin-script.js"></script>
 </body>
+
 </html>

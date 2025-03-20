@@ -23,26 +23,14 @@
     <link rel="stylesheet" href="../style/footer.css">
 </head>
         <?php
-        include("../header.html");
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "lateodb";
-            // Create connection
-            $conn = mysqli_connect($servername, $username, $password, $dbname);
-            
-            // Check connection
-            if (!$conn) {
-              die("Connection failed: " . mysqli_connect_error());
-            }
-            //echo "Connected successfully";
+        include "../header.html";
+            require "../admin/connection_db.php";
 
-            $sql="SELECT * FROM menu";
+            $sql="SELECT * FROM menu WHERE active=1";
             $result = mysqli_query($conn, $sql);
             if(mysqli_num_rows  ($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
-                    include("menu-component.php");
-                //     echo "<br>id: ". $row["ID"] ."<br>Name: ". $row["Name"]."<br>Price: ". $row["Price"] ."<br>Ingredients: ". $row["Ingredients"]." <br>Quantity: ". $row["Quantity"] ."<br>ImageURL: ". $row["ImageURL"]."<br>Creation Date: ". $row["CreationDate"];
+                    include "menu-component.php";
                 }
             }
             else{
@@ -50,8 +38,8 @@
             }
             
             mysqli_close($conn);
-            include ("../footer.html");
+            include "../footer.html";
         ?>
-    
+    <script src="../script.js"></script>
     </body>
 </html>

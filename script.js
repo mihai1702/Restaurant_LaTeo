@@ -19,7 +19,7 @@ function swipePhotos() {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
-    slidesPerView: 2, // Valoarea implicită
+    slidesPerView: 2, 
     speed: 600,
     coverflowEffect: {
       rotate: 50,
@@ -30,12 +30,12 @@ function swipePhotos() {
     },
     loop: true,
     autoplay: {
-      delay: 2000, // Timp între tranziții automate
-      disableOnInteraction: false, // Continuă autoplay chiar dacă utilizatorul interacționează
+      delay: 2000, 
+      disableOnInteraction: false, 
     },
     breakpoints: {
-      // Setări pentru dimensiuni mai mari
-      1024: { // Ecran cu lățime de minim 1024px
+      
+      1024: {
         slidesPerView: 3,
       },
     },
@@ -48,8 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setTimeout(swipePhotos, 0); // Așteaptă 1 secundă înainte de a inițializa sliderul
-          observer.disconnect(); // Oprește observarea pentru a nu reinițializa sliderul
+          setTimeout(swipePhotos, 0);
+          observer.disconnect();
         }
       });
     });
@@ -70,12 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   })
 
-
-
-// function ScrollToTop(event) {
-//     event.preventDefault(); // Previne comportamentul implicit al link-ului
-//     window.scrollTo({
-//         top: 0,
-//         behavior: 'smooth'
-//     });
-// }
+  document.querySelectorAll(".menu-comp").forEach(menu => {
+    menu.addEventListener("click", function() {
+        this.querySelector(".ingredients").toggleAttribute("hidden");
+        this.querySelector(".quantity").toggleAttribute("hidden");
+    });
+});

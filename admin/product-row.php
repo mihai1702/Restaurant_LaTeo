@@ -1,7 +1,7 @@
 <tr id="product-<?php echo $row["ID"]?>">
     <td><?php echo $row["ID"]?></td>
     <td><?php echo $row["Name"]?></td>
-    <td><input type="checkbox" <?php echo ($row['active']=='1')?'checked':'' ?>></td>
+    <td><input class="statusCheckBox" data-id="<?php echo $row['ID']?>" type="checkbox" <?php echo ($row['active']=='1')?'checked':'' ?>></td>
     <td><?php echo $row["Price"]?></td>
     <td><?php echo $row["Ingredients"]?></td>
     <td><?php echo $row["Quantity"]?></td>

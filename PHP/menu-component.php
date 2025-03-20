@@ -17,13 +17,13 @@
                 <span>RON</span>
             </p>
         </div>
-        <p class="ingredients">
+        <p class="ingredients" hidden>
             <span>Ingrediente: </span>
             <?php
                 echo $row["Ingredients"];
             ?>
         </p>
-        <p class="quantity">
+        <p class="quantity" hidden>
             <span>Cantitate: </span>
             <?php
                 echo $row["Quantity"];

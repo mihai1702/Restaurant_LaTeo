@@ -29,10 +29,10 @@ require("product.php");
                 $target_file=$directory.$filename;
                 $tmp_name=$_FILES['imageURL']['tmp_name'];
                 if(move_uploaded_file($tmp_name, $target_file)){
-                    die("Fisierul a fost incarcat cu succes");
+                    echo "Fisierul a fost incarcat cu succes";
                 }
                 else{
-                    die("eroare la adaugarea fisierului ");
+                    echo "eroare la adaugarea fisierului ";
                 }
             }
 
