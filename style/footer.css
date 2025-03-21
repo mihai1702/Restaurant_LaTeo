@@ -75,3 +75,13 @@ hr{
 .footer img{
     border: none;
 }
+@media(min-width:1024px){
+    .footer .desktop-style{
+        display: flex;
+        gap: 150px;
+        justify-content: center;
+    }
+    .footer hr{
+        width: 100%;
+    }
+}

@@ -34,6 +34,7 @@ $result = mysqli_query($conn, $sql);
                     <th>Price</th>
                     <th>Ingredients</th>
                     <th>Quantity</th>
+                    <th>Category</th>
                     <th>IMG Path</th>
                     <th>Creation Date</th>
                     <th></th>

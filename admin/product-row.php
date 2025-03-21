@@ -5,6 +5,7 @@
     <td><?php echo $row["Price"]?></td>
     <td><?php echo $row["Ingredients"]?></td>
     <td><?php echo $row["Quantity"]?></td>
+    <td><?php echo $row["Categ_ID"]?></td>
     <td><?php echo $row["ImageURL"]?></td>
     <td><?php echo $row["CreationDate"]?></td>
     <td>

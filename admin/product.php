@@ -7,6 +7,7 @@ class Product{
     public $quantity;
     public$imageURL;
     public $creationDate;
+    public $Categ_id;
     public function __construct(){
         
     }
@@ -23,9 +24,9 @@ class Product{
     }
     public function addProduct($conn){ 
             $price = floatval($this->price);
-    
-            $sql = "INSERT INTO menu (Name, Price, Ingredients, Quantity, ImageURL, CreationDate)
-                    VALUES ('$this->name', '$price', '$this->ingredients', '$this->quantity', '$this->imageURL', '$this->creationDate')";
+            $category=intval($this->Categ_id);
+            $sql = "INSERT INTO menu (Name, Price, Ingredients, Quantity, ImageURL, CreationDate, Categ_ID)
+                    VALUES ('$this->name', '$price', '$this->ingredients', '$this->quantity', '$this->imageURL', '$this->creationDate', '$category')";
 
     $this->sqlExecute($conn, $sql);
     }
@@ -33,7 +34,7 @@ class Product{
         $price = floatval($this->price);
 
         $sql = "UPDATE menu 
-        SET Name='$this->name', Price='$price', Ingredients='$this->ingredients', Quantity='$this->quantity', ImageURL='$this->imageURL', CreationDate='$this->creationDate' 
+        SET Name='$this->name', Price='$price', Ingredients='$this->ingredients', Quantity='$this->quantity', ImageURL='$this->imageURL', CreationDate='$this->creationDate', Categ_ID='$this->Categ_id' 
         WHERE ID='$id'";
         $this->sqlExecute($conn, $sql);
     }

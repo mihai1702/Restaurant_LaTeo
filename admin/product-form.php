@@ -1,6 +1,6 @@
 <?php
-require ("connection_db.php");
-require("product.php");
+require "connection_db.php";
+require "product.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,7 @@ require("product.php");
         $product->quantity = mysqli_real_escape_string($conn, $_POST['Quantity']);
         $product->imageURL = mysqli_real_escape_string($conn, $_FILES['imageURL']['name']);
         $product->creationDate = mysqli_real_escape_string($conn, $_POST['CreationDate']);
-        
+        $product->Categ_id=mysqli_real_escape_string($conn, $_POST['categories']);
         $directory="../images/menu-images/";
             if (isset($_FILES["imageURL"])){
                 $file=$_FILES["imageURL"];
@@ -70,10 +70,9 @@ require("product.php");
         <div>
             <label for="Ingredients">Ingredients: </label>
             <div class="input-and-span">
-                <textarea id="ingredients" class="ingredients-input" type="text" name="Ingredients" value="<?php echo isset($_GET["product_id"]) ? $prod_array['Ingredients']: ''?>" required></textarea>
+                <textarea id="ingredients" class="ingredients-input" type="text" name="Ingredients"required><?php echo isset($_GET["product_id"]) ? $prod_array['Ingredients']: ''?></textarea>
                 <span id="ingredientsError" class="error-message"></span>
             </div>
-            
         </div>
         <div>
             <label for="Quantity">Quantity: </label>
@@ -81,6 +80,21 @@ require("product.php");
                 <input id="quantity" type="text" name="Quantity" value="<?php echo isset($_GET["product_id"]) ? $prod_array['Quantity']: ''?>" required>
                 <span id="quantityError" class="error-message"></span>
             </div>
+        </div>
+        <div>
+            <label for="Category">Category:</label>
+            <select name="categories" id="">
+                <?php
+                    $result=$conn->query("SELECT * FROM menucategory");
+                    if(mysqli_num_rows  ($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            ?>
+                            <option id="Category" value="<?php echo $row['Cat_ID'] ?>"><?php echo $row['Cat_Name'] ?></option>
+                            <?php
+                        }
+                    }
+                ?>
+            </select>
         </div>
         <div>
             <label for="ImageURL">Image Path: </label>

@@ -2,6 +2,7 @@ body{
  background-color: rgb(205, 194, 165);
  margin:0px;
  margin-top: 80px;
+font-family: 'Ubuntu', sans-serif;
 }
 .menu-comp{
     background-color: #e1d7c668;
@@ -13,7 +14,6 @@ body{
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
     margin-bottom: 10px;
-    display: block;
 }
 .name-price{
     display: flex;
@@ -29,11 +29,38 @@ h4{
 }
 
 .menu-comp img{
-    max-width: 90%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
     border-radius:5px;
     border: 2px solid #322524;
+    
 }
- 
+.category{
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.category select{
+    width: 200px;
+    height: 30px;
+    align-self: center;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+}
+.category select:hover{
+    border:2px solid #322524;
+}
+@media (min-width: 1024px)
+{
+    .product-list{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    } 
+    .menu-comp{
+        max-width: 600px;
+    }
+}

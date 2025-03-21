@@ -17,6 +17,7 @@
                 <span>RON</span>
             </p>
         </div>
+        <div class="hidden">
         <p class="ingredients" hidden>
             <span>Ingrediente: </span>
             <?php
@@ -30,5 +31,7 @@
             ?>
             g
         </p>
+        </div>
+        
     </div>
 </div>
