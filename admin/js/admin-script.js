@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     let nameInput = document.getElementById("name");
     let priceInput = document.getElementById("price");
@@ -128,7 +127,6 @@ $(".statusCheckBox").click("click", function (e) {
 })
 
 function loadCategories(){
-    
     $.ajax({
         type: "POST",
         url: "load-categories.php",

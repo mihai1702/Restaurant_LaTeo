@@ -26,7 +26,6 @@ require "product.php";
                         <td>Nume categorie</td>
                     </tr>
                 </thead>
-                <tbody></tbody>
                 <tbody>
 
                 </tbody>

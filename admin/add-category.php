@@ -13,6 +13,5 @@ require "connection_db.php";
         else{
             echo json_encode(["status" => "error", "message" => "A apărut o eroare la adăugarea categoriei."]);
         }
-    
     }
 ?>
