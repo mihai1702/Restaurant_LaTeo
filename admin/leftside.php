@@ -3,7 +3,10 @@
         <a href="products-administration.php">Products administration</a>
     </div>
     <div>
-        <a href="../PHP/menu.php">Back to user</a>
+        <a href="categories-administration.php">Categories Administration</a>
+    </div>
+    <div>
+        <a href="../index.php">Back to user</a>
     </div>
 
 </section>

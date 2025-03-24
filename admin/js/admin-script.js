@@ -126,3 +126,56 @@ $(".statusCheckBox").click("click", function (e) {
         }
     })
 })
+
+function loadCategories(){
+    
+    $.ajax({
+        type: "POST",
+        url: "load-categories.php",
+        dataType: "json",
+        success: function(response){
+            $(".categories-table tbody").empty();
+            response.forEach(function(category){
+                $(".categories-table tbody").append(
+                    `
+                    <tr>
+                        <td>${category.Cat_ID}</td>
+                        <td>${category.Cat_Name}</td>
+                    </tr>
+                    `
+                )
+            })
+        },
+        error: function (xhr, status, error) {
+            console.log("AJAX Error Status:", status);
+            console.log("AJAX Error:", error);
+            console.log("AJAX Response Text:", xhr.responseText);
+            alert("A apărut o eroare la afisare in tabel. Detalii în consolă.");
+        }
+    })
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadCategories();
+})
+
+$("#addCategoryForm").on("submit", function(e){
+    e.preventDefault();
+    var categoryName=$("#category-name").val();
+    $.ajax({
+        type: "POST",
+        url: "add-category.php",
+        data:{catName: categoryName},
+        dataType:"json",
+        success: function(response){
+            loadCategories();
+        },
+        error: function (xhr, status, error) {
+            console.log("AJAX Error Status:", status);
+            console.log("AJAX Error:", error);
+            console.log("AJAX Response Text:", xhr.responseText);
+            alert("A apărut o eroare la adaugarea categoriei. Detalii în consolă.");
+        }
+
+    })
+})

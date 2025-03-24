@@ -58,7 +58,7 @@ td img{
     display: flex;
     align-items: center;
 }
-.h2-a-flex a{
+.h2-a-flex a, .category-content a{
     text-decoration: none;
     color: #fff;
     background-color: rgb(10, 124, 168);
@@ -68,7 +68,7 @@ td img{
     border: 2px solid rgb(5, 69, 94);
 
 }
-.h2-a-flex a:hover{
+.h2-a-flex a:hover, .category-content a:hover{
     background-color: rgb(5, 69, 94);
 }
 form{
@@ -171,4 +171,12 @@ form .ingredients-input{
 .invalid {
     border: 2px solid red;
     border-radius: 5px;
+}
+
+.category-content{
+    margin-left: 400px;
+}
+.category-content div{
+    display: flex;
+    gap: 40px;
 }

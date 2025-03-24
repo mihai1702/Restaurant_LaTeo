@@ -39,12 +39,13 @@ h4{
 }
 .category{
     display: flex;
-    gap: 40px;
     margin-bottom: 20px;
     margin-left: 20px;
+    margin-right: 20px;
+    justify-content: space-between;
 }
 .category select{
-    width: 200px;
+    width: 150px;
     height: 30px;
     align-self: center;
     text-align: center;
@@ -62,5 +63,12 @@ h4{
     } 
     .menu-comp{
         max-width: 600px;
+    }
+    .category{
+        justify-content: start;
+        gap: 40px;
+    }
+    .category select{
+        width: 200px;
     }
 }
