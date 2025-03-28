@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <form id="register-form">
+    <form id="register-form" action="../admin/email.php">
         <h2>Register</h2>
         <div class="mb-3">
             <label class="form-label" for="#username-input">Username</label>

@@ -10,9 +10,10 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $sql->bind_param('sss', $username, $email, $hashed_password);
 
     if($sql->execute()){
-        echo json_encode(array('status'=> 'success','message'=> 'Inregistrat cu succes'));
+        //include 'admin/PHPMailer.php';
+        echo json_encode(array('success'=> 'true','message'=> 'Inregistrat cu succes'));
     }
     else{
-        echo json_encode(array('status'=> 'error','message'=> 'Eroare la inregistrare'));
+        echo json_encode(array('success'=> 'false','message'=> 'Eroare la inregistrare'));
     }
 }

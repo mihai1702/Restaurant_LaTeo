@@ -16,7 +16,7 @@ require "is-logged.php";
     <?php
     $product = new Product();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $product->name = mysqli_real_escape_string($conn,$_POST['Name']);
+        $product->name = mysqli_real_escape_string($conn,$_POST['Name']); // 'Cornelus' OR 1=1;-- '
         $product->price = mysqli_real_escape_string($conn, $_POST['Price']);
         $product->ingredients =mysqli_real_escape_string($conn, $_POST['Ingredients']);
         $product->quantity = mysqli_real_escape_string($conn, $_POST['Quantity']);

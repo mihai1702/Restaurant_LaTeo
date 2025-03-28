@@ -101,7 +101,11 @@ $(document).ready(function(){
                 },
                 dataType:"json",
                 success:function(response){
-                    $("#register-form")[0].reset();
+                    if(response.success==true){
+                        
+                        $("#register-form")[0].reset();
+                
+                    }
                 },
                 error: function (xhr, status, error) {
                     console.log("AJAX Error Status:", status);

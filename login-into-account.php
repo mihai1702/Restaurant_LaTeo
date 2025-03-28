@@ -5,7 +5,8 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $password=$_POST['password'];
 
 
-    $sql=$conn->prepare('SELECT * FROM users WHERE username=?');
+    $sql=$conn->prepare('SELECT * FROM users WHERE username=?'); //tratare sql injection : " OR 1=1;--
+    //$sql=$conn->prepare('SELECT * FROM users WHERE username='.$username); // Asa nu!
     $sql->bind_param('s',$username);
     $sql->execute();
     $result= $sql->get_result();
