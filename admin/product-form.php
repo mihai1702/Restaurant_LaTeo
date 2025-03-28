@@ -1,6 +1,7 @@
 <?php
 require "connection_db.php";
 require "product.php";
+require "is-logged.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

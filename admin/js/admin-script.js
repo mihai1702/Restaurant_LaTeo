@@ -136,9 +136,12 @@ function loadCategories(){
             response.forEach(function(category){
                 $(".categories-table tbody").append(
                     `
-                    <tr>
+                    <tr id="category-${category.Cat_ID}">
                         <td>${category.Cat_ID}</td>
                         <td>${category.Cat_Name}</td>
+                        <td>
+                            <a href="" class="deleteCatButton" data-id="${category.Cat_ID}"><img title="Delete Category" src="../icons/delete-icon.svg" alt="."></a>
+                        </td>
                     </tr>
                     `
                 )
@@ -152,6 +155,39 @@ function loadCategories(){
         }
     })
 }
+
+$(document).on("click", ".deleteCatButton" ,function (e) {
+    e.preventDefault();
+    let CategoryId = $(this).data("id");
+    let popup = document.getElementById("deleteCatPopUp");
+    popup.style.display = "flex";
+    $("#confirmDelCatButton").click(function () {
+        $.ajax({
+            type: "POST",
+            url: "deleteCategory.php",
+            data: { id: CategoryId },
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                if (response.success == true) {
+                    popup.style.display = "none";
+                    $("#category-" + CategoryId).fadeOut();
+                } else {
+                    alert("Eroare: " + response.message);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.log("AJAX Error Status:", status);
+                console.log("AJAX Error:", error);
+                console.log("AJAX Response Text:", xhr.responseText);
+                alert("A apărut o eroare la ștergere. Detalii în consolă.");
+            }
+        })
+    })
+    $("#declineDelCatButton").click(function () {
+        popup.style.display = "none";
+    });
+})
 
 document.addEventListener('DOMContentLoaded', function() {
     loadCategories();
@@ -176,4 +212,45 @@ $("#addCategoryForm").on("submit", function(e){
         }
 
     })
+})
+
+function loadReservations(){
+    $.ajax({
+        type: "POST",
+        url: "load-reservations.php",
+        dataType: "json",
+        success: function(response){
+            $(".reservations-table tbody").empty();
+            response.forEach(function(reservation){
+                $(".reservations-table tbody").append(
+                    `
+                    <tr>
+                        <td>${reservation.reserv_id}</td>
+                        <td>${reservation.reserv_date}</td>
+                        <td>${reservation.reserv_hour}</td>
+                        <td>${reservation.person_numb}</td>
+                        <td>${reservation.reserv_name}</td>
+                        <td>${reservation.email}</td>
+                        <td>${reservation.phone_numb}</td>
+                        <td>${reservation.observations}</td>
+                        <td>${reservation.status}</td>
+                        <td>
+                            <a class="declineReservationButton" data-id="${reservation.reserv_id}"><img title="Decline Reservation" src="../icons/decline-icon.svg" alt="."></a>
+                            <a class="acceptReservationButtton" data-id="${reservation.reserv_id}"><img title="Accept Reservation" src="../icons/accept-icon.svg" alt="."></a>
+                        </td>
+                    </tr>
+                    `
+                )
+            })
+        },
+        error: function (xhr, status, error) {
+            console.log("AJAX Error Status:", status);
+            console.log("AJAX Error:", error);
+            console.log("AJAX Response Text:", xhr.responseText);
+            alert("A apărut o eroare la afisare in tabel. Detalii în consolă.");
+        }
+    })
+}
+document.addEventListener('DOMContentLoaded', function() {
+    loadReservations();
 })

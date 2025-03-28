@@ -1,3 +1,6 @@
+<?php
+    require "is-logged.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,6 +1,7 @@
 <?php
 require "connection_db.php";
 require "product.php";
+require "is-logged.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +15,7 @@ require "product.php";
 
 <body>
     <?php
+    $currentPage="categoriesAdministration";
     include "leftside.php";
     ?>
     <div class="category-content">
@@ -24,6 +26,7 @@ require "product.php";
                     <tr>
                         <td>ID Categorie</td>
                         <td>Nume categorie</td>
+                        <td></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +39,14 @@ require "product.php";
                     <input type="text" id="category-name" required>
                     <button type="submit">Submit</button>
                 </form>
-                </section>
+            </section>
+        </div>
+    </div>
+    <div id="deleteCatPopUp" class="pop-up">
+        <div class="pop-up-content">
+            <p>Are you sure you want to delete this product?</p>
+            <button id="confirmDelCatButton">Confirm</button>
+            <button id="declineDelCatButton">Decline</button>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -12,11 +12,20 @@ body{
     padding-left: 40px;
     font-size: 20px;
     position: fixed;
-    
 }
 .left-side a{
+    display: flex;
     color: #fff;
     text-decoration: none;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    width: 240px; 
+    height: 40px;
+    padding-left: 10px;
+}
+.left-side a.active, .left-side a:hover{
+    border-radius: 2px;
+    background-color:rgb(6, 87, 119);
 
 }
 .main-side{
@@ -58,7 +67,7 @@ td img{
     display: flex;
     align-items: center;
 }
-.h2-a-flex a, .category-content a{
+.h2-a-flex a{
     text-decoration: none;
     color: #fff;
     background-color: rgb(10, 124, 168);
@@ -68,7 +77,7 @@ td img{
     border: 2px solid rgb(5, 69, 94);
 
 }
-.h2-a-flex a:hover, .category-content a:hover{
+.h2-a-flex a:hover{
     background-color: rgb(5, 69, 94);
 }
 form{
@@ -141,22 +150,22 @@ form .ingredients-input{
     border: none;
     cursor: pointer;
 }
-#confirmButton {
+#confirmButton, #confirmDelCatButton {
     background: red;
     color: white;
     border-radius: 5px;
     border: 2px solid rgb(153, 0, 0);
 }
-#confirmButton:hover{
+#confirmButton:hover, #confirmDelCatButton:hover{
     background-color: rgb(153, 0, 0);
 }
-#declineButton {
+#declineButton, #declineDelCatButton {
     background: gray;
     color: white;
     border-radius: 5px;
     border: 2px solid rgb(95, 94, 94);
 }
-#declineButton:hover{
+#declineButton:hover, #declineDelCatButton:hover{
     background-color: rgb(95, 94, 94);
 }
 .input-and-span{
@@ -180,3 +189,50 @@ form .ingredients-input{
     display: flex;
     gap: 40px;
 }
+.deleteCatButton a{
+    background-color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+  }
+  
+  thead {
+    background-color: #4d4c4c;
+    color: white;
+  }
+  
+  thead th {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #555;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tbody tr:hover {
+    background-color: #e6f7ff;
+    cursor: pointer;
+  }
+  .reservations-table{
+    width: 60%;
+    margin-left: 400px;
+  }
+  #numberOfPersons{
+    width: 30px;
+  }
+
+  .logout{
+    position: absolute;
+
+  }
