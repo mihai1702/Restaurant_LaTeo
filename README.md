@@ -1,15 +1,14 @@
 <div align="center">
-  <img src="images/logo.png" alt="Restaurant La Teo" width="180"/>
   <h1>🍽️ Restaurant La Teo – Website Oficial</h1>
   <p><i>Prezentare modernă, meniu atractiv și viitor sistem de rezervări.</i></p>
 </div>
 
 ---
 
-## 🔥 Badges
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![PHP](https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg)
 
 ---
 
