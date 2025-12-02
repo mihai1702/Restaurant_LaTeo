@@ -49,10 +49,3 @@ index.php
 
 ---
 
-
-### ✔️ 1. **Sistem rezervări (PHP + MySQL + AJAX)**
-Funcționalități planificate:
-- Form de rezervare (nume, telefon, data, ora, număr persoane)
-- Validare frontend + backend
-- Salvare rezervare în baza de date
-- Panou admin pentru vizualizare / management rezervări
