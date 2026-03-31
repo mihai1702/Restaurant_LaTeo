@@ -1,6 +1,5 @@
 <div align="center">
-  <h1>🍽️ Restaurant La Teo</h1>
-  <p><i>Prezentare modernă, meniu atractiv și viitor sistem de rezervări.</i></p>
+  <h1>Restaurant La Teo</h1>
 </div>
 
 ---
